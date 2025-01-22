@@ -44,3 +44,61 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+/*
+
+
+
+package com.creativeitinstitute.dicerollapp
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    lateinit var showDiceNumber: TextView
+    lateinit var showDiceMessage: TextView
+    lateinit var rollBtn: Button
+    val lucknum = 777
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        var dice = Dice()
+
+        showDiceNumber = findViewById(R.id.showDiceNumber)
+        showDiceMessage = findViewById(R.id.showDiceMessage)
+        rollBtn = findViewById(R.id.rollBtn)
+
+        rollBtn.setOnClickListener {
+            var roolnumber = dice.roll(1, 90000000)
+            when {
+                roolnumber == lucknum -> {
+                    showDiceMessage.text = "you won babyyy"
+                    showDiceMessage.setTextColor(getColor(R.color.blue))
+                }
+
+                roolnumber % 2 == 0 -> {
+                    showDiceMessage.text = "omggg its even number "
+                    showDiceNumber.setTextColor((getColor(R.color.pina)))
+                }
+
+                roolnumber % 2 != 0 -> {
+                    showDiceMessage.text = "omggg its odd number "
+                    showDiceNumber.setTextColor((getColor(R.color.purple)))
+                }
+
+                else -> {
+                    showDiceMessage.text = "you loser"
+                    showDiceNumber.setTextColor((getColor(R.color.red)))
+                }
+            }
+            showDiceNumber.text = roolnumber.toString()
+        }
+    }
+}
+
+*/
